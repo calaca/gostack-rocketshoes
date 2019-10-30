@@ -27,6 +27,8 @@ Header.propTypes = {
   cartSize: PropTypes.instanceOf(Array).isRequired,
 };
 
-export default connect(state => ({
+const mapStateToProps = state => ({
   cartSize: state.cart.length,
-}))(Header);
+});
+
+export default connect(mapStateToProps)(Header);
