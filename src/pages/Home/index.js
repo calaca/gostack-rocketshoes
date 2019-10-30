@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { MdAddShoppingCart } from 'react-icons/md';
 import { ProductList } from './styles';
 import { formatPrice } from '../../util/format';
 import api from '../../services/api';
 
 class Home extends Component {
+  static propTypes = {
+    dispatch: PropTypes.func.isRequired,
+  };
+
   state = {
     products: [],
   };
