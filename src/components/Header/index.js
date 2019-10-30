@@ -24,7 +24,7 @@ function Header({ cartSize }) {
 }
 
 Header.propTypes = {
-  cartSize: PropTypes.instanceOf(Array).isRequired,
+  cartSize: PropTypes.number.isRequired,
 };
 
 const mapStateToProps = state => ({
