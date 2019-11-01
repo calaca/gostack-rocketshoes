@@ -6,9 +6,10 @@ import {
   MdRemoveCircleOutline,
   MdAddCircleOutline,
   MdDelete,
+  MdRemoveShoppingCart,
 } from 'react-icons/md';
 import { formatPrice } from '../../util/format';
-import { Container, ProductTable, Total } from './styles';
+import { Container, ProductTable, Total, Message } from './styles';
 import * as CartActions from '../../store/modules/cart/actions';
 
 function Cart({ cart, removeFromCart, updateAmountRequest, total }) {
@@ -68,6 +69,12 @@ function Cart({ cart, removeFromCart, updateAmountRequest, total }) {
           ))}
         </tbody>
       </ProductTable>
+      {cart.length <= 0 && (
+        <Message>
+          <MdRemoveShoppingCart size={70} color="#ddd" />
+          <span>Carrinho vazio</span>
+        </Message>
+      )}
       <footer>
         <button type="button">Finalizar pedido</button>
         <Total>

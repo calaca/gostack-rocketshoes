@@ -97,3 +97,19 @@ export const Total = styled.div`
     margin-left: 5px;
   }
 `;
+
+export const Message = styled.div`
+  text-align: center;
+  font-size: 36px;
+  color: #ddd;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  span {
+    text-transform: uppercase;
+  }
+`;
