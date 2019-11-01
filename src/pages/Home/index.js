@@ -10,7 +10,7 @@ import * as CartActions from '../../store/modules/cart/actions';
 
 class Home extends Component {
   static propTypes = {
-    addToCart: PropTypes.func.isRequired,
+    addToCartRequest: PropTypes.func.isRequired,
     amount: PropTypes.instanceOf(Object).isRequired,
   };
 
@@ -29,17 +29,15 @@ class Home extends Component {
     this.setState({ products: data });
   }
 
-  handleAddProduct = product => {
-    const { addToCart } = this.props;
+  handleAddProduct = id => {
+    const { addToCartRequest } = this.props;
 
-    addToCart(product);
+    addToCartRequest(id);
   };
 
   render() {
     const { products } = this.state;
     const { amount } = this.props;
-
-    console.tron.log(amount);
 
     return (
       <ProductList>
@@ -51,7 +49,7 @@ class Home extends Component {
 
             <button
               type="button"
-              onClick={() => this.handleAddProduct(product)}
+              onClick={() => this.handleAddProduct(product.id)}
             >
               <div>
                 <MdAddShoppingCart size={16} color="#fff" />
